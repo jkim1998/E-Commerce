@@ -5,13 +5,15 @@ import { AiOutlineShopping } from 'react-icons/ai'
 import { Cart } from '.';
 import { useStateContext} from '../context/StateContext';
 
+import Logo from '../public/assets/logo.png';
+
 const Navbar = () => {
   const { showCart, setShowCart, totalQuantities } = useStateContext();
 
   return (
     <div className="navbar-container">
       <p className="logo">
-        <Link href="/">JSM Headphones</Link>
+        <Link href="/"><img alt="logo" src={Logo} /></Link>
       </p>
 
       <button type="button" className="cart-icon" onClick={() => setShowCart(true)}>
