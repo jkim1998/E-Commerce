@@ -17,13 +17,18 @@ a {
   cursor: pointer;
 }
 
+.mid {
+  justify-content: center;
+  display: flex;
+}
+
 .main-container {
   max-width: 1400px;
   margin: auto;
   width: 100%;
 }
 .layout {
-  padding: 10px;
+  padding: 0;
 }
 
 .navbar-container {
@@ -106,21 +111,31 @@ span.text-red {
   text-overflow: ellipsis;
 }
 
+
 .product-card {
   cursor: pointer;
   transform: scale(1, 1);
   transition: transform 0.5s ease;
   color: #324d67;
   width: 300px;
+  height: 350px;
   overflow: hidden;
-  white-space: nowrap;
+  /* white-space: nowrap; */
+  justify-content:left;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
+
 .product-card:hover {
   transform: scale(1.1, 1.1);
+  border-radius: 5%;  
+  /* border: 1px solid black; */
+  z-index: 100;
 }
 .product-image {
   border-radius: 15px;
-  background-color: #ebebeb;
+  background-color: transparent;
   transform: scale(1, 1);
   transition: transform 0.5s ease;
   max-width: 100%;
@@ -131,10 +146,22 @@ span.text-red {
 .product-name {
   font-weight: 500;
 }
+
+.product-name_container {
+  height: 50px;
+  display: block;
+  max-width: 98%;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: clip;
+  text-indent: 10px;
+}
+
 .product-price {
   font-weight: 800;
   margin-top: 6px;
   color: black;
+  text-indent: 10px;
 }
 
 .hero-banner-container {
@@ -174,10 +201,10 @@ span.text-red {
 }
 .hero-banner-image {
   position: absolute;
-  top: 0%;
-  right: 20%;
+  top: 10%;
+  right: 10%;
   width: 450px;
-  height: 450px;
+  height: 350px;
   object-fit: contain;
 }
 
@@ -250,10 +277,12 @@ span.text-red {
   margin: 18px;
 }
 .footer-banner-image {
-  height: 300px;
+  height: 250px;
+  margin-right: 100px;
 }
 .banner-desc .right {
   line-height: 1.4;
+  margin-left: 100px;
 }
 .banner-desc .right h3 {
   font-weight: 800;
@@ -791,10 +820,10 @@ span {
     margin-top: 80px;
   }
   .footer-banner-image {
-    width: 77%;
+    /* width: 77%;
     left: 30%;
     top: 6%;
-    height: 56%;
+    height: 56%; */
   }
   .banner-desc .left h3 {
     font-weight: 900;
