@@ -1,8 +1,10 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { AiFillInstagram, AiOutlineTwitter } from "react-icons/ai";
+import { AiFillGithub, AiFillLinkedin, AiOutlineBold } from "react-icons/ai";
 
 const Footer = () => {
+  const url = process.env.GITHUB_LINK;
+
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -10,10 +12,10 @@ const Footer = () => {
 
     emailjs
       .sendForm(
-        "service_7j5jo9x",
-        "template_rfjhsak",
+        NEXT_PUBLIC_EMAILJS_SERVICE,
+        NEXT_PUBLIC_EMAILJS_TEMPLATE,
         form.current,
-        "v8YqFVE_Ecepm6GUK"
+        NEXT_PUBLIC_EMAILJS_API
       )
       .then(
         (result) => {
@@ -30,58 +32,78 @@ const Footer = () => {
       <div className="footer-top">
         <div className="category">
           <h>About</h>
-          <p>Logitech Story</p>
-          <p>Careers</p>
-          <p>Investors</p>
-          <p>Blog</p>
-          <p>Press</p>
-          <p>Contact us</p>
+          <a>Logitech Story</a>
+          <a>Careers</a>
+          <a>Investors</a>
+          <a>Blog</a>
+          <a>Press</a>
+          <a>Contact us</a>
         </div>
         <div className="category">
           <h>Values</h>
-          <p>Social Impact</p>
-          <p>Sustainability</p>
-          <p>Recylcing</p>
-          <p>Acesssibvility</p>
+          <a>Social Impact</a>
+          <a>Sustainability</a>
+          <a>Recylcing</a>
+          <a>Acesssibvility</a>
         </div>
         <div className="category">
           <h>Partners</h>
-          <p>Affilate Program</p>
-          <p>Influencer</p>
+          <a>Affilate Program</a>
+          <a>Influencer</a>
         </div>
         <div className="category">
           <h>Customers</h>
-          <p>Return Policy</p>
-          <p>Email Preferences</p>
-          <p>Student Discount</p>
+          <a>Return Policy</a>
+          <a>Email Preferences</a>
+          <a>Student Discount</a>
         </div>
       </div>
       <div className="footer-bot">
         <div className="social">
           <p className="icons">
-            <AiFillInstagram />
-            <AiOutlineTwitter />
+            <a href="https://github.com/jkim1998" target="_blank">
+              <AiFillGithub />
+            </a>
+            <a href="https://www.linkedin.com/in/jkim980/" target="_blank">
+              <AiFillLinkedin />
+            </a>
+            <a href="https://jonathankim980.com" target="_blank">
+              <AiOutlineBold />
+            </a>
           </p>
         </div>
         <div className="contactMe">
           <form ref={form} onSubmit={sendEmail}>
-            <div className="test">
-              <input
-                type="email"
-                name="user_email"
-                placeholder="your email address"
-                className="email"
-              />
-              <input type="submit" value="Send" className="send"/>
+            <div className="subscribe_container">
+              <div className="email_container">
+                <input
+                  type="email"
+                  name="user_email"
+                  placeholder="your email address"
+                  className="email"
+                />
+              </div>
+              <input type="submit" value="Subscribe" className="send" />
             </div>
+            <label className="subscribe">
+            <input type="checkbox" />
+            <span>Yes, I want to receive news and product emails.</span>
+            <br />
+            Read our
+          </label>
+          <span>
+            <a href="http://www.google.com" target="_blank" class="policy">
+              privacy policy.
+            </a>
+          </span>
           </form>
         </div>
       </div>
       <div className="footer_footer">
         <div className="copyright">
-          <p>©2022 Jonathan Kim. All rights reserved</p> |<p>Terms of Use</p> |
-          <p>Web Privacy Policy</p> |<p>Product Privacy Policy</p> |
-          <p>Cookie Settings</p> |<p>Sitemap</p>
+          <p>©2022 Jonathan Kim. All rights reserved</p> |<a>Terms of Use</a> |
+          <a>Web Privacy Policy</a> |<a>Product Privacy Policy</a> |
+          <a>Cookie Settings</a> |<a>Sitemap</a>
         </div>
         <div>
           <p>United States</p>
